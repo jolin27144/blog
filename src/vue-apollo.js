@@ -1,19 +1,22 @@
 import Vue from "vue";
-import VueApollo from "@/vue-apollo";
+import VueApollo from "vue-apollo";
 import {
   createApolloClient,
   restartWebsockets
 } from "vue-cli-plugin-apollo/graphql-client";
 
+const VUE_APP_GITHUB_GRAPHQL_AUTH_TOKEN =
+  "6eccb12efa556a85a7a4b90f48fddd2a807b00cc";
+
 // Install the vue plugin
 Vue.use(VueApollo);
 
 // Name of the localStorage item
-const AUTH_TOKEN = "apollo-token";
+const AUTH_TOKEN = VUE_APP_GITHUB_GRAPHQL_AUTH_TOKEN;
 
 // Http endpoint
 const httpEndpoint =
-  process.env.VUE_APP_GRAPHQL_HTTP || "http://localhost:4000/graphql";
+  process.env.VUE_APP_GRAPHQL_HTTP || "https://api.github.com/graphql";
 // Files URL root
 export const filesRoot =
   process.env.VUE_APP_FILES_ROOT ||
@@ -36,7 +39,7 @@ const defaultOptions = {
   // You need to pass a `wsEndpoint` for this to work
   websocketsOnly: false,
   // Is being rendered on the server?
-  ssr: false
+  ssr: false,
 
   // Override default apollo link
   // note: don't override httpLink here, specify httpLink options in the
@@ -47,7 +50,16 @@ const defaultOptions = {
   // cache: myCache
 
   // Override the way the Authorization header is set
-  // getAuth: (tokenName) => ...
+  getAuth: () => {
+    // get the authentication token from local storage if it exists
+    const token = "6eccb12efa556a85a7a4b90f48fddd2a807b00cc";
+    // return the headers to the context so httpLink can read them
+    if (token) {
+      return "Bearer " + token;
+    } else {
+      return "";
+    }
+  }
 
   // Additional ApolloClient options
   // apollo: { ... }

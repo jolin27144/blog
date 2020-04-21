@@ -1,18 +1,19 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <h3>{{ repository.issues }}</h3>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import { Sample } from "../graphql/sample";
 export default {
-  name: "Home",
-  components: {
-    HelloWorld
+  apollo: {
+    repository: Sample
+  },
+  data() {
+    return {
+      repository: { issues: "" }
+    };
   }
 };
 </script>
+
+<style></style>
