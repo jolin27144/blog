@@ -78,6 +78,15 @@
 
 ## WebWorker
 
+## chrome devtools
+
+### NetWork
+
+#### Timeline
+
+##### stalled  
+- [chrome的timeline中stalled问题解析](https://www.cnblogs.com/jpfss/p/8963763.html)
+
  
  
 # 网络协议
