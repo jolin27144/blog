@@ -16,6 +16,9 @@
 # JavaScript
 
 ## 历史,特性,常用模式
+[[ECMAScript] TC39 process](https://www.jianshu.com/p/b0877d1fc2a4)
+
+[官网解释](https://tc39.es/process-document/)
 
 ## JavaScript Framework
 
@@ -29,7 +32,11 @@
 
 #### Vue SSR
 
-#### Element-ui/iView
+#### Element-ui
+
+- Table组件的Props:max-height,不接受calc(100% - 525px),
+
+#### iView
 
 ### React
 
@@ -53,6 +60,7 @@
 ## Webpack
 
 ## Babel
+[The Future](https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets)
 
 ## Prettier
 
