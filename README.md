@@ -20,6 +20,20 @@
 
 [官网解释](https://tc39.es/process-document/)
 
+
+### 数组
+
+### 字符串
+
+### 正则表达式
+
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions#special-quantifier
+
+https://mp.weixin.qq.com/s/qVaHVdLLYymTL9ObGZmTXQ
+
+
+### 隐式转换
+
 ## JavaScript Framework
 
 ### Vue
