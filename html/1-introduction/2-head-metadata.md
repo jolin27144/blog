@@ -30,7 +30,7 @@ HTML 头部即包含在`<head>`元素里面的内容。
 3. `<link>元素`
 4. `<script>元素`
 
-下面分别从介绍。
+下面分别介绍。
 
 # `<title>元素`
 
@@ -83,8 +83,6 @@ name 属性一般和 content 属性一起使用。
   3. 找到 name = "description" 的 meta 标签。
   4. 在你喜欢的搜索引擎里搜索“MDN Web Docs”。
   5. 仔细观察`<meta>`中的 description 和 `<title>` 元素如何在搜索结果里显示
-
-  ![结果图](https://media.prod.mdn.mozit.cloud/attachments/2018/07/03/16074/03e99e180d14d2c1e006734ef4cacb45/mdn-search-result.png)
 
 - viewport, 它提供有关视口初始大小的提示，仅供移动设备使用。
 
