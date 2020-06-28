@@ -1,4 +1,4 @@
-> ⚡️**预警，前方高能：**
+> ⚡️ **预警，前方高能：**
 >
 > 在本文中，若出现以下 emoji 表情包请特别留意:
 >
@@ -24,9 +24,9 @@
 </html>
 ```
 
-⚡️**HTML 头部即包含在`<head>`元素里面的内容。**
+⚡️ **HTML 头部即包含在`<head>`元素里面的内容。**
 
-⚡️**注意:`<head>`元素里面的内容不会在浏览器中显示。**
+⚡️ **注意:`<head>`元素里面的内容不会在浏览器中显示。**
 
 ## <center>🔖 `<head>`元素</center>
 
@@ -55,7 +55,7 @@
 
 ## <center>🔖 `<meta>`元素</center>
 
-⚡️**元数据就是描述数据的数据，而 HTML 有一个“官方的”方式来为一个文档添加元数据—— `<meta>`元素，它是一个空元素。**
+⚡️ **元数据就是描述数据的数据，而 HTML 有一个“官方的”方式来为一个文档添加元数据—— `<meta>`元素，它是一个空元素。**
 
 > `<meta>` 元素用来表示任何不能由其它 HTML 元相关元素，即：
 >
@@ -68,7 +68,7 @@
 - 如果设置了 charset 属性，meta 元素是一个字符集声明，告诉文档使用哪种字符编码。
 - 如果设置了 itemprop 属性，meta 元素提供用户定义的元数据。
 
-> ⚡️**注意: 全局属性 name 在`<meta>`元素中具有特殊的语义；另外， 在同一个`<meta>`标签中，name, http-equiv 或者 charset 三者中任何一个属性存在时，itemprop 属性不能被使用。**
+> ⚡️ **注意: 全局属性 name 在`<meta>`元素中具有特殊的语义；另外， 在同一个`<meta>`标签中，name, http-equiv 或者 charset 三者中任何一个属性存在时，itemprop 属性不能被使用。**
 
 下面分别介绍:
 
@@ -76,9 +76,9 @@
 
 name 属性一般和 content 属性一起使用,以名-值对的方式给文档提供元数据。
 
-⚡️**其中 name 作为元数据的名称，content 作为元数据的值。**
+⚡️ **其中 name 作为元数据的名称，content 作为元数据的值。**
 
-⚡️**即：name="" content=""**
+⚡️ **即：name="" content=""**
 
 一下是几个常用的 name 属性:
 
@@ -97,7 +97,7 @@ name 属性一般和 content 属性一起使用,以名-值对的方式给文档�
 
   手机浏览器是把页面放在一个虚拟的“窗口”（viewport）中，通常这个虚拟的“窗口”（viewport）比屏幕宽，这样就不用把每个网页挤到很小的窗口中（这样会破坏没有针对手机浏览器优化的网页的布局），用户可以通过平移和缩放来看网页的不同部分。
 
-  ⚡️**移动版的 Safari 浏览器最先引进了 viewport 这个 name 属性，让网页开发者来控制 viewport 的大小和缩放，其他手机浏览器也基本支持。**
+  ⚡️ **移动版的 Safari 浏览器最先引进了 viewport 这个 name 属性，让网页开发者来控制 viewport 的大小和缩放，其他手机浏览器也基本支持。**
 
   示例:`<meta name=”viewport” content=”width=device-width, initial-scale=1, maximum-scale=1″>`
 
@@ -146,7 +146,7 @@ name 属性一般和 content 属性一起使用,以名-值对的方式给文档�
   如果 content 只包含一个正整数,则是重新载入页面的时间间隔(秒);
   如果 content 包含一个正整数并且跟着一个字符串 ';url=' 和一个合法的 URL，则是重定向到指定链接的时间间隔(秒)
 
-  示例：
+  举个 🌰 子：
 
   ```
   <!-- Redirect page after 3 seconds -->
@@ -167,14 +167,17 @@ itemprop 是全局属性，用于向一个物体中添加属性。
 
 meta 元素中也可以使用。
 
-如：
+举个 🌰 子：
 
 ```
 <meta itemprop="description" content="my description" />
 ```
 
-> 注意: 全局属性 name 在`<meta>`元素中具有特殊的语义；另外， 在同一个 `<meta>` 标签中，name, http-equiv 或者 charset 三者中任何一个属性存在时，itemprop 属性不能被使用。
-> 如：
+⚡️ **注意: 全局属性 name 在`<meta>`元素中具有特殊的语义**
+
+⚡️ **另外， 在同一个 `<meta>` 标签中，name, http-equiv 或者 charset 三者中任何一个属性存在时，itemprop 属性不能被使用**。
+
+举个 🌰 子：
 
 ```
 // 正确
@@ -189,23 +192,29 @@ meta 元素中也可以使用。
 
 ## <center>🔖 `<link>`元素</center>
 
-HTML 外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的关系。
+`<link>`元素规定了当前文档与外部资源的关系。
 
 该元素最常用于链接样式表，此外也可以被用来创建站点图标(比如 PC 端的“favicon”图标和移动设备上用以显示在主屏幕的图标) 。
 
-`<link>` 元素经常位于文档的头部。这个 link 元素有 2 个属性，rel="stylesheet"表明这是文档的样式表，而 href 包含了样式表文件的路径：
+`<link>` 元素经常位于文档的头部。
 
-1. 要链接一个外部的样式表，你需要像这样在你的`<head>`中包含一个`<link>`元素：
+`<link>` 元素有 2 个属性，rel="stylesheet"表明这是文档的样式表，而 href 包含了样式表文件的路径：
 
-   ```
-   <link href="main.css" rel="stylesheet">
-   ```
+1.  要链接一个外部的样式表，你需要在你的`<head>`中包含一个`<link>`元素,
 
-2. 增加自定义图标
+    举个 🌰 子：
 
-   ```
-   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-   ```
+    ```
+    <link href="main.css" rel="stylesheet">
+    ```
+
+2.  增加自定义图标
+
+    举个 🌰 子：
+
+    ```
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    ```
 
 ## <center>🔖 `<script>`元素</center>
 
@@ -217,15 +226,15 @@ HTML 外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的
 <script src="my-js-file.js"></script>
 ```
 
-> 注意： `<script>`元素看起来像一个空元素，但它并不是，因此需要一个结束标记。您还可以选择将脚本放入`<script>`元素中，而不是指向外部脚本文件。
+> ⚡️ **注意： `<script>`元素看起来像一个空元素，但它并不是，因此需要一个结束标记。**您还可以选择将脚本放入`<script>`元素中，而不是指向外部脚本文件。
 
 ## <center>🔖 总结</center>
 
-- [x] 理解 HTML 头部
-- [x] 理解 HTML 头部的`<title>`元素
-- [x] 理解 HTML 头部的`<meta>`元素
-- [x] 理解 HTML 头部的`<link>`元素
-- [x] 理解 HTML 头部的`<script>`元素
+- ✔️ 理解 HTML 头部
+- ✔️ 理解 HTML 头部的`<title>`元素
+- ✔️ 理解 HTML 头部的`<meta>`元素
+- ✔️ 理解 HTML 头部的`<link>`元素
+- ✔️ 理解 HTML 头部的`<script>`元素
 
 ## <center>🔖 参考资料</center>
 
