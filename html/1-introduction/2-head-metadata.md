@@ -1,4 +1,13 @@
-## 🔖什么是 HTML 头部?
+> ⚡️**预警，前方高能：**
+>
+> 在本文中，若出现以下 emoji 表情包请特别留意:
+>
+> - 白色书签：🔖， 代表一级标题；
+> - 橙色大四边形：🔶 ,代表二级标题；
+> - 蓝色小四边形：🔹， 代表三级标题；
+> - 黄色闪电：⚡️，代表强调；
+
+## 🔖 什么是 HTML 头部?
 
 让我们简单的回顾下上一章提到的 HTML
 
@@ -15,9 +24,9 @@
 </html>
 ```
 
-HTML 头部即包含在`<head>`元素里面的内容。
+⚡️**HTML 头部即包含在`<head>`元素里面的内容。**
 
-`<head>`元素里面的内容不会在浏览器中显示。
+⚡️**注意:`<head>`元素里面的内容不会在浏览器中显示。**
 
 ## 🔖`<head>`元素
 
@@ -46,32 +55,32 @@ HTML 头部即包含在`<head>`元素里面的内容。
 
 ## 🔖`<meta>`元素
 
-元数据就是描述数据的数据，而 HTML 有一个“官方的”方式来为一个文档添加元数据—— `<meta>`元素,是一个空元素。
+⚡️**元数据就是描述数据的数据，而 HTML 有一个“官方的”方式来为一个文档添加元数据—— `<meta>`元素，它是一个空元素。**
 
-> HTML `<meta>` 元素表示那些不能由其它 HTML 元相关元素 (`<base>, <link>, <script>, <style> 或 <title>`) 之一表示的任何元数据信息`。
+> `<meta>` 元素用来表示任何不能由其它 HTML 元相关元素，即：
+>
+> 不能用`<base>`, `<link>`, `<script>`, `<style>` , `<title>`等表示的元数据信息。
 
-有很多不同种类的`<meta>`元素可以被包含进你的页面的`<head>`元素。
+有很多不同种类的`<meta>`元素可以被包含进`<head>`元素中。
 
 - 如果设置了 name 属性，meta 元素提供的是文档级别（document-level）的元数据，应用于整个页面。
 - 如果设置了 http-equiv 属性，meta 元素则是编译指令，提供的信息与类似命名的 HTTP 头部相同。
 - 如果设置了 charset 属性，meta 元素是一个字符集声明，告诉文档使用哪种字符编码。
 - 如果设置了 itemprop 属性，meta 元素提供用户定义的元数据。
 
-> 注意: 全局属性 name 在`<meta>`元素中具有特殊的语义；另外， 在同一个`<meta>`标签中，name, http-equiv 或者 charset 三者中任何一个属性存在时，itemprop 属性不能被使用。
+> ⚡️**注意: 全局属性 name 在`<meta>`元素中具有特殊的语义；另外， 在同一个`<meta>`标签中，name, http-equiv 或者 charset 三者中任何一个属性存在时，itemprop 属性不能被使用。**
 
 下面分别介绍:
 
-### 1.设置了 name 属性
+### 🔶 1.设置了 name 属性
 
-name 属性一般和 content 属性一起使用。
+name 属性一般和 content 属性一起使用,以名-值对的方式给文档提供元数据。
 
-以名-值对的方式给文档提供元数据。
+⚡️**其中 name 作为元数据的名称，content 作为元数据的值。**
 
-其中 name 作为元数据的名称，content 作为元数据的值。
+⚡️**即：name="" content=""**
 
-即：name="" content=""
-
-几个常用的 name 属性:
+一下是几个常用的 name 属性:
 
 - author，就是这个文档的作者名称，可以用自由的格式去定义。
 - description，其中包含页面内容的简短和精确的描述。 一些浏览器，如 Firefox 和 Opera，将其用作书签页面的默认描述。
@@ -86,7 +95,9 @@ name 属性一般和 content 属性一起使用。
 
 - viewport, 它提供有关视口初始大小的提示，仅供移动设备使用。
 
-  手机浏览器是把页面放在一个虚拟的“窗口”（viewport）中，通常这个虚拟的“窗口”（viewport）比屏幕宽，这样就不用把每个网页挤到很小的窗口中（这样会破坏没有针对手机浏览器优化的网页的布局），用户可以通过平移和缩放来看网页的不同部分。移动版的 Safari 浏览器最新引进了 viewport 这个 meta tag，让网页开发者来控制 viewport 的大小和缩放，其他手机浏览器也基本支持。
+  手机浏览器是把页面放在一个虚拟的“窗口”（viewport）中，通常这个虚拟的“窗口”（viewport）比屏幕宽，这样就不用把每个网页挤到很小的窗口中（这样会破坏没有针对手机浏览器优化的网页的布局），用户可以通过平移和缩放来看网页的不同部分。
+
+  ⚡️**移动版的 Safari 浏览器最先引进了 viewport 这个 name 属性，让网页开发者来控制 viewport 的大小和缩放，其他手机浏览器也基本支持。**
 
   示例:`<meta name=”viewport” content=”width=device-width, initial-scale=1, maximum-scale=1″>`
 
@@ -106,9 +117,11 @@ name 属性一般和 content 属性一起使用。
 
 > 在 [standard metadata names](https://wiki.developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name) 中查看在 HTML 规范中定义的标准元数据名称的更多细节。
 
-### 2.设置了 http-equiv 属性
+### 🔶 2.设置了 http-equiv 属性
 
-该属性定义了一个编译指示指令。这个属性叫做 http-equiv(alent) 是因为所有允许的值都是特定 HTTP 头部的名称，如下：
+该属性定义了一个编译指示指令。
+
+这个属性叫做 http-equiv(alent) 是因为所有允许的值都是特定 HTTP 头部的名称，如下：
 
 - content-security-policy
 
@@ -140,7 +153,7 @@ name 属性一般和 content 属性一起使用。
   <meta http-equiv="refresh" content="3;url=https://www.mozilla.org">
   ```
 
-### 3.设置了 charset 属性
+### 🔶 3.设置了 charset 属性
 
 ```
 <meta charset="utf-8">
@@ -148,9 +161,9 @@ name 属性一般和 content 属性一起使用。
 
 这个元素简单的指定了文档的字符编码 —— 在这个文档中被允许使用的字符集。
 
-### 4.设置了 itemprop 属性
+### 🔶 4.设置了 itemprop 属性
 
-itemprop 是全局属性 被用于向一个物体中添加属性
+itemprop 是全局属性，用于向一个物体中添加属性。
 
 meta 元素中也可以使用。
 
@@ -176,11 +189,13 @@ meta 元素中也可以使用。
 
 ## 🔖`<link>`元素
 
-HTML 外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的关系。该元素最常用于链接样式表，此外也可以被用来创建站点图标(比如 PC 端的“favicon”图标和移动设备上用以显示在主屏幕的图标) 。
+HTML 外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的关系。
+
+该元素最常用于链接样式表，此外也可以被用来创建站点图标(比如 PC 端的“favicon”图标和移动设备上用以显示在主屏幕的图标) 。
 
 `<link>` 元素经常位于文档的头部。这个 link 元素有 2 个属性，rel="stylesheet"表明这是文档的样式表，而 href 包含了样式表文件的路径：
 
-1. 要链接一个外部的样式表，你需要像这样在你的<head>中包含一个<link>元素：
+1. 要链接一个外部的样式表，你需要像这样在你的`<head>`中包含一个`<link>`元素：
 
    ```
    <link href="main.css" rel="stylesheet">
@@ -192,9 +207,11 @@ HTML 外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的
    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
    ```
 
-## 🔖`<script>元素`
+## 🔖`<script>`元素
 
-`<script>` 部分没必要非要放在文档头部；实际上，把它放在文档的尾部（在 </body>标签之前）是一个更好的选择，这样可以确保在加载脚本之前浏览器已经解析了 HTML 内容（如果脚本加载某个不存在的元素，浏览器会报错)。
+`<script>` 部分没必要非要放在文档头部；
+
+实际上，把它放在文档的尾部（在 `</body>`标签之前）是一个更好的选择，这样可以确保在加载脚本之前浏览器已经解析了 HTML 内容（如果脚本加载某个不存在的元素，浏览器会报错)。
 
 ```
 <script src="my-js-file.js"></script>
@@ -202,7 +219,7 @@ HTML 外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的
 
 > 注意： `<script>`元素看起来像一个空元素，但它并不是，因此需要一个结束标记。您还可以选择将脚本放入`<script>`元素中，而不是指向外部脚本文件。
 
-## 🔖总结
+## 🔖 总结
 
 - [x] 理解 HTML 头部
 - [x] 理解 HTML 头部的`<title>`元素
@@ -210,27 +227,27 @@ HTML 外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的
 - [x] 理解 HTML 头部的`<link>`元素
 - [x] 理解 HTML 头部的`<script>`元素
 
-## 🔖参考资料
+## 🔖 参考资料
 
 - `<head>`标签里有什么? Metadata-HTML 中的元数据,
   https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
-- `<head>: The Document Metadata (Header) element`,
+- `<head>`: The Document Metadata (Header) element,
   https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/head
 
-- `<link>: The External Resource Link element`,
+- `<link>`: The External Resource Link element,
   https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link
 
-- `<meta>: The Document-level Metadata element`,
+- `<meta>`: The Document-level Metadata element,
   https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 
-- `<title>: The Document Title element`,
+- `<title>`: The Document Title element,
   https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title
 
-- `<script>: The Script element`,
+- `<script>`: The Script element,
   https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
 
 - 移动前端开发之 viewport 的深入理解,
   https://www.cnblogs.com/2050/p/3877280.html
 
-- `<meta>标签 name="viewport" 详解`,
+- `<meta>`标签 name="viewport" 详解,
   https://www.jianshu.com/p/32f0761261b7

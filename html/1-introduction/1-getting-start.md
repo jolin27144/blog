@@ -1,8 +1,17 @@
-## 🔖什么是 HTML?
+> ⚡️**预警，前方高能：**
+>
+> 在本文中，若出现以下 emoji 表情包请特别留意:
+>
+> - 白色书签：🔖， 代表一级标题；
+> - 橙色大四边形：🔶 ,代表二级标题；
+> - 蓝色小四边形：🔹， 代表三级标题；
+> - 黄色闪电：⚡️，代表强调；
+
+## 🔖 什么是 HTML?
 
 > HTML (HyperText Markup Language) 不是一门编程语言，而是一种用来告知浏览器如何组织页面的标记语言。HTML 可复杂、可简单，一切取决于开发者。它由一系列的元素（elements）组成，这些元素可以用来包围不同部分的内容，使其以某种方式呈现或者工作。 一对标签（ tags）可以为一段文字或者一张图片添加超链接，将文字设置为斜体，改变字号，等等。
 
-> **HTML 标签不区分大小写**。也就是说，输入标签时既可以使用大写字母也可以使用小写字母。 `例如，标签 <title> 写作 <title>、<TITLE>、<Title>、<TiTlE>，等等都可以正常工作。不过，从一致性、可读性等各方面来说，最好仅使用小写字母。`
+> ⚡️**HTML 标签不区分大小写**。也就是说，输入标签时既可以使用大写字母也可以使用小写字母。 `例如，标签 <title> 写作 <title>、<TITLE>、<Title>、<TiTlE>，等等都可以正常工作。不过，从一致性、可读性等各方面来说，最好仅使用小写字母。`
 
 ## 🔖HTML 文档
 
@@ -24,7 +33,7 @@
 1. `<!DOCTYPE html>:` 声明文档类型. 很久以前，早期的 HTML(大约 1991 年 2 月)，文档类型声明类似于链接，规定了 HTML 页面必须遵从的良好规则，能自动检测错误和其他有用的东西。使用如下：
    `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">`
    然而这种写法已经过时了，这些内容已成为历史。
-   **只需要知道 `<!DOCTYPE html>` 是最短有效的文档声明。**
+   ⚡️**只需要知道 `<!DOCTYPE html>` 是最短有效的文档声明。**
 
 2. `<html></html>: <html>`元素。这个元素包裹了整个完整的页面，是一个根元素。
 
@@ -47,15 +56,15 @@
 
 4.  元素（Element）：开始标签、结束标签与内容相结合，便是一个完整的元素。
 
-### 元素分类
+### 🔶 元素分类
 
 > 注: [查看-所有 HTML 元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element)
 
-#### 块级元素和内联元素
+#### 🔹 块级元素和内联元素
 
 > 注: HTML5 重新定义了元素的类别：见 [元素内容分类(译文)](https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Content_categories)。尽管这些新的定义更精确，但却比上述的 “块级元素” 和 “内联元素” 更难理解，因此在之后的讨论中仍使用旧的定义。
 > 个人认为：HTML5 对元素的重新定义,主要是建立在元素使用规范上。规范了某个元素它可以包含哪一类内容。
-> 例如: **章节元素`<article>, <aside>, <nav> and <section>`**
+> 例如: ⚡️**章节元素`<article>, <aside>, <nav> and <section>`**
 
 在 HTML 中有两种你需要知道的重要元素类别，块级元素和内联元素。
 
@@ -71,9 +80,9 @@
 
 > [块级元素参考](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Block-level_elements)
 
-#### 空元素
+#### 🔹 空元素
 
-> 不是所有元素都拥有开始标签，内容，结束标签。一些元素只有一个标签，通常用来在此元素所在位置插入/嵌入一些东西。例如：元素<img>是用来在元素<img>所在位置插入一张指定的图片。例子如下：
+> 不是所有元素都拥有开始标签，内容，结束标签。一些元素只有一个标签，通常用来在此元素所在位置插入/嵌入一些东西。例如：元素`<img>`,是用来在其所在位置插入一张指定的图片。例子如下：
 
 ```
 <img src="https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site/images/firefox-icon.png">
@@ -84,7 +93,7 @@
 
 ![img元素示例](https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site/images/firefox-icon.png)
 
-### 元素属性
+### 🔶 元素属性
 
 元素也可以拥有属性，如下：
 
@@ -96,7 +105,7 @@
 2. 属性名称。
 3. 属性值，由一对引号“ ”引起来(布尔属性可省略)。
 
-#### 布尔属性
+#### 🔹 布尔属性
 
 有时你会看到没有值的属性，它是合法的。这些属性被称为布尔属性，他们只能有跟它的属性名一样的属性值。例如 disabled 属性，他们可以标记表单输入使之变为不可用(变灰色)，此时用户不能向他们输入任何数据。
 
@@ -110,7 +119,7 @@
 <input type="text" disabled>
 ```
 
-#### 属性值的引号
+#### 🔹 属性值的引号
 
 虽然属性值不强制要求加引号。但是不加引号，会导致属性值有空格时的解析问题。
 如：
@@ -125,7 +134,7 @@
 <a href=https://www.mozilla.org/ title=The Mozilla homepage>收藏页面</a>
 ```
 
-#### 属性值的引号使用单引号或者双引号
+#### 🔹 属性值的引号使用单引号或者双引号
 
 都能正确解析。一般使用双引号。
 
@@ -175,11 +184,11 @@ HTML 中用
 HTML 中用 <p> 来定义段落元素
 ```
 
-> **维基百科上有一个包含所有可用 HTML 字符实体引用的列表：[XML 和 HTML 字符实体引用列表](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references)。**
+> ⚡️**维基百科上有一个包含所有可用 HTML 字符实体引用的列表：[XML 和 HTML 字符实体引用列表](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references)。**
 
-## HTML 注释
+## 🔖 HTML 注释
 
-为了将一段 HTML 中的内容置为注释，你需要将其用特殊的记号<!--和-->包括起来， 比如：
+为了将一段 HTML 中的内容置为注释，你需要将其用特殊的记号`<!--和-->`包括起来， 比如：
 
 ```
 <p>我没有被注释！</p>
@@ -187,7 +196,7 @@ HTML 中用 <p> 来定义段落元素
 <!-- <p>我被注释了！</p> -->
 ```
 
-## 🔖总结
+## 🔖 总结
 
 - [x] 理解 HTML 的文档结构
 - [x] 理解 HTML 的元素结构
@@ -195,7 +204,7 @@ HTML 中用 <p> 来定义段落元素
 - [x] 理解 HTML 的特殊字符
 - [x] 理解 HTML 的注释
 
-## 🔖参考资料
+## 🔖 参考资料
 
 - HTML 介绍—开始学习 HTML,
   https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started
