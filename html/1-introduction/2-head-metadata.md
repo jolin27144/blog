@@ -7,7 +7,7 @@
 > - 蓝色小四边形：🔹， 代表三级标题；
 > - 黄色闪电：⚡️，代表强调；
 
-## 🔖 什么是 HTML 头部?
+## <center>🔖 什么是 HTML 头部?</center>
 
 让我们简单的回顾下上一章提到的 HTML
 
@@ -28,7 +28,7 @@
 
 ⚡️**注意:`<head>`元素里面的内容不会在浏览器中显示。**
 
-## 🔖`<head>`元素
+## <center>🔖 `<head>`元素</center>
 
 它包含了像页面的标题,CSS，指向自定义图标的链接,元数据(描述 HTML 的数据，比如，作者，和描述文档的重要关键词), 脚本等。
 
@@ -41,7 +41,7 @@
 
 下面分别介绍。
 
-## 🔖`<title>`元素
+## <center>🔖 `<title>`元素</center>
 
 我们之前已经了解过`<title>`，它可以用来给 html 文档添加一个标题。
 
@@ -53,7 +53,7 @@
   1. 被作为建议的书签名。
   2. 被用在搜索的结果中。
 
-## 🔖`<meta>`元素
+## <center>🔖 `<meta>`元素</center>
 
 ⚡️**元数据就是描述数据的数据，而 HTML 有一个“官方的”方式来为一个文档添加元数据—— `<meta>`元素，它是一个空元素。**
 
@@ -187,7 +187,7 @@ meta 元素中也可以使用。
 <meta itemprop="description" name="description" content="" />
 ```
 
-## 🔖`<link>`元素
+## <center>🔖 `<link>`元素</center>
 
 HTML 外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的关系。
 
@@ -207,7 +207,7 @@ HTML 外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的
    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
    ```
 
-## 🔖`<script>`元素
+## <center>🔖 `<script>`元素</center>
 
 `<script>` 部分没必要非要放在文档头部；
 
@@ -219,7 +219,7 @@ HTML 外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的
 
 > 注意： `<script>`元素看起来像一个空元素，但它并不是，因此需要一个结束标记。您还可以选择将脚本放入`<script>`元素中，而不是指向外部脚本文件。
 
-## 🔖 总结
+## <center>🔖 总结</center>
 
 - [x] 理解 HTML 头部
 - [x] 理解 HTML 头部的`<title>`元素
@@ -227,7 +227,7 @@ HTML 外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的
 - [x] 理解 HTML 头部的`<link>`元素
 - [x] 理解 HTML 头部的`<script>`元素
 
-## 🔖 参考资料
+## <center>🔖 参考资料</center>
 
 - `<head>`标签里有什么? Metadata-HTML 中的元数据,
   https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML

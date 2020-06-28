@@ -7,13 +7,13 @@
 > - 蓝色小四边形：🔹， 代表三级标题；
 > - 黄色闪电：⚡️，代表强调；
 
-## 🔖 什么是 HTML?
+## <center>🔖 什么是 HTML?</center>
 
 > HTML (HyperText Markup Language) 不是一门编程语言，而是一种用来告知浏览器如何组织页面的标记语言。HTML 可复杂、可简单，一切取决于开发者。它由一系列的元素（elements）组成，这些元素可以用来包围不同部分的内容，使其以某种方式呈现或者工作。 一对标签（ tags）可以为一段文字或者一张图片添加超链接，将文字设置为斜体，改变字号，等等。
 
 > ⚡️**HTML 标签不区分大小写**。也就是说，输入标签时既可以使用大写字母也可以使用小写字母。 `例如，标签 <title> 写作 <title>、<TITLE>、<Title>、<TiTlE>，等等都可以正常工作。不过，从一致性、可读性等各方面来说，最好仅使用小写字母。`
 
-## 🔖HTML 文档
+## <center>🔖 HTML 文档</center>
 
 ```
 <!DOCTYPE html>
@@ -44,9 +44,9 @@
 
 5. `<body></body>: <body>`元素。 包含了你访问页面时所有显示在页面上的内容，文本，图片，音频，游戏等等。
 
-## 🔖HTML 元素
+## <center>🔖 HTML 元素</center>
 
-![HTML elment](https://media.prod.mdn.mozit.cloud/attachments/2019/02/08/16475/cfa4526491ae15e6256fd67bb16bc7ea/element.png)
+![HTML elment](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html1-1-1.png)
 
 1.  开始标签（Opening tag）：包含元素的名称（本例为 p），被左、右角括号所包围。表示元素从这里开始或者开始起作用 —— 在本例中即段落由此开始。
 
@@ -91,13 +91,13 @@
 
 显示如下：
 
-![img元素示例](https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site/images/firefox-icon.png)
+![img元素示例](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html1-1-2.png)
 
 ### 🔶 元素属性
 
 元素也可以拥有属性，如下：
 
-![元素属性图](https://media.prod.mdn.mozit.cloud/attachments/2019/02/08/16476/2f01531934cedf02e61d1ec86e918bbb/attribute.png)
+![元素属性图](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html1-1-3.png)
 
 一个属性必须包含如下内容：
 
@@ -138,7 +138,7 @@
 
 都能正确解析。一般使用双引号。
 
-## 🔖HTML 空格
+## <center>🔖 HTML 空格</center>
 
 下面的两个代码片段是等价的：
 
@@ -153,7 +153,7 @@
 
 那么为什么我们会在 HTML 元素的嵌套中使用那么多的空白呢? 答案就是为了可读性 —— 如果你的代码被很好地进行格式化，那么就很容易理解你的代码是怎么回事，反之就只有聚做一团的混乱.。在我们的 HTML 代码中，我们让每一个嵌套的元素以两个空格缩进。 你使用什么风格来格式化你的代码取决于你 (比如所对于每层缩进使用多少个空格)，但是你应该坚持使用某种风格。
 
-## 🔖HTML 特殊字符
+## <center>🔖 HTML 特殊字符</center>
 
 在 HTML 中，字符 <, >,",' 和 & 是特殊字符. 它们是 HTML 语法自身的一部分, 那么你如何将这些字符包含进你的文本中呢, 比如说如果你真的想要在文本中使用符号&或者小于号, 而不想让它们被浏览器视为代码并被解释?
 
@@ -186,7 +186,7 @@ HTML 中用 <p> 来定义段落元素
 
 > ⚡️**维基百科上有一个包含所有可用 HTML 字符实体引用的列表：[XML 和 HTML 字符实体引用列表](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references)。**
 
-## 🔖 HTML 注释
+## <center>🔖 HTML 注释</center>
 
 为了将一段 HTML 中的内容置为注释，你需要将其用特殊的记号`<!--和-->`包括起来， 比如：
 
@@ -196,7 +196,7 @@ HTML 中用 <p> 来定义段落元素
 <!-- <p>我被注释了！</p> -->
 ```
 
-## 🔖 总结
+## <center>🔖 总结</center>
 
 - [x] 理解 HTML 的文档结构
 - [x] 理解 HTML 的元素结构
@@ -204,7 +204,7 @@ HTML 中用 <p> 来定义段落元素
 - [x] 理解 HTML 的特殊字符
 - [x] 理解 HTML 的注释
 
-## 🔖 参考资料
+## <center>🔖 参考资料</center>
 
 - HTML 介绍—开始学习 HTML,
   https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started
