@@ -10,7 +10,7 @@
 
 🌰 例如:
 
-![html](https://cdn.jsdelivr.net/gh/jolin27144/blog@master/images/html/1-intruduction/4-creating-hyperlinks/qq.jpeg)
+![hyperlinks example](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html-1-4-1.jpeg)
 
 腾讯网首页，蓝色背景导航栏每个元素即为超链接，提供了导航功能。
 
@@ -49,33 +49,67 @@
 </a>
 ```
 
-## 🔖 统一资源标志符(URI)
+## 🔖 URI
 
-> ⚡️**统一资源标识符（英语：Uniform Resource Identifier，缩写：URI）在电脑术语中是一个用于标识某一互联网资源名称的字符串。**
+> ⚡️**统一资源标识符（英语：Uniform Resource Identifier，缩写：URI）是一个用于标识某一互联网资源的字符串。**
+
+### 🔶 URI 和 URL、URN
+
+先看看它们的发展历史(不感兴趣可略过)：
+
+> 如文章开头提到，正是超链接的诞生，提供了互联网进行“互联”的一种方式。
+>
+> 与此同时，URL 也作为一个”超链接的目标资源的短字符串"而被引入。
+>
+> 往后几年的发展中，为了区别：⚡️ **"提供资源访问"** ⚡️ **"资源标记"** 这两种字符串。
+>
+> 两个专业术语也因此诞生：“统一资源定位符”和“统一资源名称”。
+>
+> 也就是我们今天所说的 URL 和 URN。
+>
+> 后来，在人们意识到两者事实上基于同一个基础的“资源标识”的概念。因此[RFC 3986](https://tools.ietf.org/html/rfc3986)提出: URL 和 URN 是 URI 的子集。
+>
+> 同时提出，未来的规格和相关文件应使用通用术语“ URI”，而不是限制性更强的术语“ URL”和“ URN”。
+
+⚡️ **概括：**
+
+- **URL 和 URN 是 URI 的子集。**
+
+- **URL 除了识别资源外，还提供了一种通过描述资源的主要访问机制来定位资源。**
+
+- **URN 则用一个独一无可、不可改变的名称标识资源，无论资源是否不存在或不可用**
 
 ![URI包含URL和URN](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/URI_Euler_Diagram_no_lone_URIs.svg/1920px-URI_Euler_Diagram_no_lone_URIs.svg.png)
 
-### 统一资源定位符(URL)
+### URI 的格式
 
-#### 绝对 URL
+![URI 格式](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html-1-4-2.png)
 
-#### 相对 URL
+- scheme：表示资源应该使用哪种协议来访问。如 HTTP、HTTPS 协议。此外还有其他不是很常见的 scheme，例如 ftp、ldap、file、news 等。
 
-### 统一资源名称(URN)
+- 在 scheme 之后，必须是三个特定的字符“://”，它把 scheme 和后面的部分分离开。URN 则只有":"。
+
+- authority：表示资源所在的主机名，通常的形式是“host:port”，即主机名加端口号。主机名可以是 IP 地址或者域名的形式，必须要有，否则浏览器就会找不到服务器。但端口号有时可以省略
+
+- path：以"/"开头。采用了类似文件系统“目录”“路径”的表示方式，因为早期互联网上的计算机多是 UNIX 系统，所以采用了 UNIX 的“/”风格。其实也比较好理解，它与 scheme 后面的“://”是一致的。
+
+- query：附加一些额外的修饰参数。
+
+- fragment：它是 URI 所定位的资源内部的一个“锚点”或者说是“标签”，浏览器可以在获取资源后直接跳转到它指示的位置。但片段标识符仅能由浏览器这样的客户端使用，服务器是看不到的。也就是说，浏览器永远不会把带“#fragment”的 URI 发送给服务器，服务器也永远不会用这种方式去处理资源的片段。
 
 ## 🔖 路径(path)
 
 ## 🔖 总结
 
-- [x] 理解 HTML 超链接
-- [x] 理解 URI 和其两种常见形式 URL、URN
-- [x] 理解 URL 中“#” “？” &“”号的作用
+- ✔️ 理解 HTML 超链接
+- ✔️ 理解 URI 和其两种常见形式 URL、URN
+- ✔️ 理解 URL 中“#” “？” &“”号的作用
 
 ## 🔖 参考资料
 
 - Creating hyperlinks,
   https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks
-- `<a>: The Anchor element`,
+- `<a>`: The Anchor element,
   https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a
 - 什么是 URL？,
   https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/What_is_a_URLa
@@ -87,3 +121,4 @@
   https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%90%8D%E7%A7%B06
 - URL 中“#” “？” &“”号的作用,
   https://www.cnblogs.com/kaituorensheng/p/3776527.html
+- RFC 3986,https://tools.ietf.org/html/rfc3986
