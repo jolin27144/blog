@@ -58,7 +58,6 @@
 </a>
 ```
 
-<<<<<<< HEAD:html/1-introduction/4-hyperlinks&uri.md
 ## 🔖 URI
 
 > ⚡️**统一资源标识符（英语：Uniform Resource Identifier，缩写：URI）是一个用于标识某一互联网资源的字符串。**
