@@ -7,7 +7,9 @@
 > - 蓝色小四边形：🔹，代表三级标题；
 > - 黄色闪电：⚡️，代表强调；
 
-## <center>🔖 什么是超链接</center>
+## <center>🔖 一、超链接</center>
+
+### 🔶 1.1 什么是超链接
 
 > 超链接是互联网提供的最令人兴奋的创新之一，它们从一开始就一直是互联网的一个特性，使互联网成为互联的网络。
 > ⚡️ **超链接使我们能够将我们的文档链接到任何其他文档（或其他资源），也可以链接到文档的指定部分**，
@@ -23,9 +25,9 @@
 
 腾讯网首页，蓝色背景导航栏每个元素即为超链接，提供了导航功能。
 
-## <center>🔖 超链接分类</center>
+### 🔶 1.2 超链接分类
 
-### 🔶 1.基本链接
+#### 🔹 1.2.1 基本链接
 
 使用`<a>`元素创建基本链接，在 href (Hypertext Reference)属性中，包含你希望指向的 URL 或 URL 片段。
 
@@ -45,7 +47,7 @@
 
 > ⚡ **注意: 可以使用 href="#top" 或者 href="#" 链接返回到页面顶部。这种行为是 HTML5 的特性。**
 
-### 🔶 2.块级链接
+#### 🔹 1.2.2 块级链接
 
 除了文字，你可以将一部分内容转换为链接，甚至是块级元素。
 如你想要将一个图像转换为链接，只需把图像元素放到`<a></a>`标签中间。
@@ -58,11 +60,11 @@
 </a>
 ```
 
-## 🔖 URI
+## <center>🔖 二、URI、URL、URN</center>
 
-> ⚡️**统一资源标识符（英语：Uniform Resource Identifier，缩写：URI）是一个用于标识某一互联网资源的字符串。**
+> ⚡️ **统一资源标识符（英语：Uniform Resource Identifier，缩写：URI）是一个用于标识某一互联网资源的字符串。**
 
-### 🔶 URI 和 URL、URN
+### 🔶 2.1 URI 和 URL、URN 的关系
 
 先看看它们的发展历史(不感兴趣可略过)：
 
@@ -88,31 +90,89 @@
 
 - **URN 则用一个独一无可、不可改变的名称标识资源，无论资源是否不存在或不可用**
 
-![URI包含URL和URN](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/URI_Euler_Diagram_no_lone_URIs.svg/1920px-URI_Euler_Diagram_no_lone_URIs.svg.png)
+![URI包含URL和URN](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html-1-4-uri&-url&urn.png)
 
-### URI 的格式
+上图表示 URI 和 URL、URN 的关系。
+
+### 🔶 2.2 URI 的格式
 
 ![URI 格式](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html-1-4-2.png)
 
-- scheme：表示资源应该使用哪种协议来访问。如 HTTP、HTTPS 协议。此外还有其他不是很常见的 scheme，例如 ftp、ldap、file、news 等。
+1. **scheme**：表示资源应该使用哪种协议来访问。
+   如 HTTP、HTTPS 协议。此外还有其他不是很常见的 scheme，例如 ftp、ldap、file、news 等。
 
-- 在 scheme 之后，必须是三个特定的字符“://”，它把 scheme 和后面的部分分离开。URN 则只有":"。
+2. **scheme 和 authority 之间**，必须是三个特定的字符 ⚡️ **“://”** ，它把 scheme 和后面的部分分离开。注意: URN 则只有":"。
 
-- authority：表示资源所在的主机名，通常的形式是“host:port”，即主机名加端口号。主机名可以是 IP 地址或者域名的形式，必须要有，否则浏览器就会找不到服务器。但端口号有时可以省略
+3. **authority**：表示资源所在的主机名，通常的形式是“host:port”，即主机名加端口号。主机名可以是 IP 地址或者域名的形式，必须要有，否则浏览器就会找不到服务器。但端口号有时可以省略
 
-- path：以"/"开头。采用了类似文件系统“目录”“路径”的表示方式，因为早期互联网上的计算机多是 UNIX 系统，所以采用了 UNIX 的“/”风格。其实也比较好理解，它与 scheme 后面的“://”是一致的。
+4. **path**：以"/"开头。采用了类似文件系统“目录”“路径”的表示方式，因为早期互联网上的计算机多是 UNIX 系统，所以采用了 UNIX 的“/”风格。其实也比较好理解，它与 scheme 后面的“://”是一致的。
 
-- query：附加一些额外的修饰参数。
+5. **query**：附加一些额外的修饰参数。
 
-- fragment：它是 URI 所定位的资源内部的一个“锚点”或者说是“标签”，浏览器可以在获取资源后直接跳转到它指示的位置。但片段标识符仅能由浏览器这样的客户端使用，服务器是看不到的。也就是说，浏览器永远不会把带“#fragment”的 URI 发送给服务器，服务器也永远不会用这种方式去处理资源的片段。
+6. **fragment**：它是 URI 所定位的资源内部的一个“锚点”或者说是“标签”，浏览器可以在获取资源后直接跳转到它指示的位置。但片段标识符仅能由浏览器这样的客户端使用，服务器是看不到的。也就是说，浏览器永远不会把带“#fragment”的 URI 发送给服务器，服务器也永远不会用这种方式去处理资源的片段。
 
-## <center>🔖 路径(path)</center>
+### 🔶 2.3 绝对 URL 和相对 URL
+
+⚡️ **绝对 URL** ： 指向由其在 Web 上的绝对位置定义的位置。 包括协议+域名。
+
+举个 🌰 子：
+
+1. 如果 index.html 页面在 projects 这一目录 。
+
+2. projects 目录位于 web 服务站点的根目录。
+
+3. web 站点的域名为`http://www.example.com`。
+
+4. 那么这个页面就可以通过`http://www.example.com/projects/index.html`访问。
+
+   ( 或者通过`http://www.example.com/projects/`来访问, 因为在没有指定特定的 URL 的情况下，大多数 web 服务会默认访问加载 index.html 这类页面)
+
+`http://www.example.com/projects/index.html`即为绝对 URL。
+
+⚡️ **相对 URL**： 指向与您链接的文件相关的位置。
+
+举个 🌰 子：
+
+1. 如果我们访问了`http://www.example.com/projects/index.html`这个文件。
+
+2. 想转到和`index.html`相同目录下的一个 PDF 文件, 那个可以直接将该文件名作为 URL。例如 `project-brief.pdf`。
+
+3. 如果 PDF 文件在 projects 的子目录 pdfs 中。 那么相对路径就是 `pdfs/project-brief.pdf`。
+   (对应的绝对 URL 就是 http://www.example.com/projects/pdfs/project-brief.pdf.)
+
+`pdfs/project-brief.pdf`即为相对 URL。
+
+## <center>🔖 三、路径</center>
+
+⚡️ **URL 使用路径查找文件。**
+
+### 🔶 3.1 URL 中使用的路径
+
+![目录结构图](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html1-4-path.png)
+
+此目录结构的根目录称为 resume。当在网站上工作时， 你会有一个包含整个网站的目录。
+
+在根目录，我们有一个 resume.html，作为主页
+
+我们的根目录还有两个目录—— dist 和 images，它们分别包含一个 index.html 文件和一个 img.png 文件。
+
+- ⚡️ **指向当前目录** ：如果 resume.html 想要包含 style.css。因为它与当前文件是在同一个目录的。可以用"./"表示当前目录，或者直接省略。
+
+  URL 为：`style.css`或`./style.css`
+
+- ⚡️ **指向子目录** ：如果 resume.html 想要包含 images 目录下的 img.png。
+
+  URL 为：`images/img.png`
+
+- ⚡️ **指向上级目录** ： 如果想在 dist/index.html 中包含一个指向 images/img.png 的超链接，你必须先返回上级目录，然后再回到 images 目录。返回上一个目录级使用两个英文点号表示 ".."。
+
+  URL 为: `../imgaes/img.png`
 
 ## <center>🔖 总结</center>
 
 - ✔️ 理解 HTML 超链接
-- ✔️ 理解 URI 和其两种常见形式 URL、URN
-- ✔️ 理解 URL 中“#” “？” &“”号的作用
+- ✔️ 理解 URI 和 URL、URN
+- ✔️ 理解 URL 中使用的路径
 
 ## <center>🔖 参考资料</center>
 
