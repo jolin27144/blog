@@ -7,187 +7,130 @@
 > - 蓝色小四边形：🔹，代表三级标题；
 > - 黄色闪电：⚡️，代表强调；
 
-## <center>🔖 一、超链接</center>
+## <center>🔖 一、HTML 中如何引入图片</center>
 
-### 🔶 1.1 什么是超链接
+### 🔶 1.1 img 标签引入
 
-> 超链接是互联网提供的最令人兴奋的创新之一，它们从一开始就一直是互联网的一个特性，使互联网成为互联的网络。
-> ⚡️ **超链接使我们能够将我们的文档链接到任何其他文档（或其他资源），也可以链接到文档的指定部分**，
-> 我们可以在一个简单的网址上提供应用程序（与必须先安装的本地应用程序或其他东西相比）。
-> 几乎任何网络内容都可以转换为链接，点击（或激活）超链接将使网络浏览器转到另一个网址（URL）。
+HTML 中可以用`<img>` 元素引入图片。
 
-> 注意：URL 可以指向 HTML 文件、文本文件、图像、文本文档、视频和音频文件以及可以在网络上保存的任何其他内容。
-> 如果浏览器不知道如何显示或处理文件，它会询问您是否要打开文件（需要选择合适的本地应用来打开或处理文件）或下载文件（以后处理它）。
+它是一个空元素，最少只需要一个 src （一般读作其全称 source）来使其生效。
+
+⚡️ **注意：像`<img>`和`<video>`这样的元素有时被称之为替换元素，因为这样的元素的内容和尺寸由外部资源（像是一个图片或视频文件）所定义，而不是元素自身。**
+
+#### 🔹 1.1.1 src 属性
+
+src 属性包含了指向我们想要引入的图片的路径，可以是相对或绝对 URL。
 
 举个 🌰 子：
 
-![hyperlinks example](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html-1-4-1.jpeg)
+你的网站中有一张图片 dinosaur.jpg 存储在和 HTML 页面同路径的 images 文件夹下（这也是 Google 推荐的做法，利于 SEO），那么你可以采用如下形式引入到 HTML 文件中：
 
-腾讯网首页，蓝色背景导航栏每个元素即为超链接，提供了导航功能。
+`<img src="images/f1.jpg">`
 
-### 🔶 1.2 超链接分类
+当然也可以，使用绝对路径：
 
-#### 🔹 1.2.1 基本链接
+`<img src="https://www.example.com/images/f1.jpg>`
 
-使用`<a>`元素创建基本链接，在 href (Hypertext Reference)属性中，包含你希望指向的 URL 或 URL 片段。
+![结果](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html-2-1-imgtag.png)
+
+⚡️ **但是这种方式是不被推荐的，这样做只会使浏览器做更多的工作，例如重新通过 DNS 再去寻找 IP 地址。通常我们都会把图片和 HTML 放在同一个服务器上。**
+
+> 警告：大多数图片是有版权的。不要在你的网页上使用一张图片，除非：
+>
+> 你是图片版权所有者
+>
+> 你有图片版权所有者明确的、书面上的使用授权
+>
+> 你有充分的证据证明这张图片是公共领域内的
+>
+> 侵犯版权是违法并且不道德的。此外，在得到授权之前永远不要把你的 src 属性指向其他人网站上的图片。这被称为"盗链（hotlinking）"。同样，盗取其他人的带宽也是违法的。而且这会降低你的页面的加载速度，而且图片可能会在不受你控制的情况下被移走或用别的令人尴尬的东西替换掉。
+
+#### 🔹 1.1.2 alt 属性
+
+alt 属性 ，它的值应该是对图片的文字描述，用于图片无法显示情况。
+
+举个 🌰 子,1.1.1 例子可以做如下改进：
+
+```
+<img src="images/f1.jpg
+     alt="这是一张f1照片"
+/>
+```
+
+测试 alt 属性最简单的方式就是故意拼错图片文件名，这样浏览器就无法找到该图片从而显示备选的文本。如果我们将上例的图片文件名改为 f1111.jpg，浏览器就不能显示图片，而显示：
+
+![](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html-2-1-alt.png)
+
+#### 🔹 1.1.3 width 和 height 属性
+
+你可以用宽度和高度属性来指定你的图片的高度和宽度。
 
 举个 🌰 子：
 
 ```
-<a href="https://juejin.im/user/5eb4366ee51d4528dd23bfad">我的掘金主页</a>.
+<img src="images/f1.jpg"
+     alt="这是一张f1照片"
+     width="400"
+     height="300"
+/>
 ```
 
-结果如下所示：
-[我的掘金主页](https://juejin.im/user/5eb4366ee51d4528dd23bfad)
+⚡️ **如果设定的宽高比例跟图片的原始比例不一样，会导致图片变形。**
 
-> URL 片段是哈希标记（#）前面的名称，哈希标记指定当前文档中的内部目标位置（HTML 元素的 ID）。
+⚡️ **注意：你应该使用 CSS 而不是 HTML，改变图片尺寸。**
 
-> URL 不限于基于 Web（HTTP）的文档，也可以使用浏览器支持的任何协议。
-> 例如，在大多数浏览器中正常工作的 file:、ftp:和 mailto：。
+#### 🔹 1.1.4 title 属性
 
-> ⚡ **注意: 可以使用 href="#top" 或者 href="#" 链接返回到页面顶部。这种行为是 HTML5 的特性。**
-
-#### 🔹 1.2.2 块级链接
-
-除了文字，你可以将一部分内容转换为链接，甚至是块级元素。
-如你想要将一个图像转换为链接，只需把图像元素放到`<a></a>`标签中间。
+类似于超链接，可以给图片增加 title 属性来提供需要更进一步的支持信息。
 
 举个 🌰 子：
 
 ```
-<a href="https://juejin.im/user/5eb4366ee51d4528dd23bfad">
-  <img src="https://cdn.jsdelivr.net/gh/jolin27144/blog@master/images/html/1-intruduction/4-creating-hyperlinks/qq.jpeg" alt="块级链接">
-</a>
+<img src="images/f1.jpg"
+     title="f1舒马赫"
+/>
 ```
 
-## <center>🔖 二、URI、URL、URN</center>
+![结果](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html-2-1-title.png)
 
-> ⚡️ **统一资源标识符（英语：Uniform Resource Identifier，缩写：URI）是一个用于标识某一互联网资源的字符串。**
+#### 🔹 1.1.5 HTML5 `<figure>` 元素
 
-### 🔶 2.1 URI 和 URL、URN 的关系
-
-先看看它们的发展历史(不感兴趣可略过)：
-
-> 如文章开头提到，正是超链接的诞生，提供了互联网进行“互联”的一种方式。
->
-> 与此同时，URL 也作为一个”超链接的目标资源的短字符串"而被引入。
->
-> 往后几年的发展中，为了区别：⚡️ **"提供资源访问"** ⚡️ **"资源标记"** 这两种字符串。
->
-> 两个专业术语也因此诞生：“统一资源定位符”和“统一资源名称”。
->
-> 也就是我们今天所说的 URL 和 URN。
->
-> 后来，在人们意识到两者事实上基于同一个基础的“资源标识”的概念。因此[RFC 3986](https://tools.ietf.org/html/rfc3986)提出: URL 和 URN 是 URI 的子集。
->
-> 同时提出，未来的规格和相关文件应使用通用术语“ URI”，而不是限制性更强的术语“ URL”和“ URN”。
-
-⚡️ **概括：**
-
-- **URL 和 URN 是 URI 的子集。**
-
-- **URL 除了识别资源外，还提供了一种通过描述资源的主要访问机制来定位资源。**
-
-- **URN 则用一个独一无可、不可改变的名称标识资源，无论资源是否不存在或不可用**
-
-![URI包含URL和URN](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html-1-4-uri&-url&urn.png)
-
-上图表示 URI 和 URL、URN 的关系。
-
-### 🔶 2.2 URI 的格式
-
-![URI 格式](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html-1-4-2.png)
-
-1. **scheme**：表示资源应该使用哪种协议来访问。
-   如 HTTP、HTTPS 协议。此外还有其他不是很常见的 scheme，例如 ftp、ldap、file、news 等。
-
-2. **scheme 和 authority 之间**，必须是三个特定的字符 ⚡️ **“://”** ，它把 scheme 和后面的部分分离开。注意: URN 则只有":"。
-
-3. **authority**：表示资源所在的主机名，通常的形式是“host:port”，即主机名加端口号。主机名可以是 IP 地址或者域名的形式，必须要有，否则浏览器就会找不到服务器。但端口号有时可以省略
-
-4. **path**：以"/"开头。采用了类似文件系统“目录”“路径”的表示方式，因为早期互联网上的计算机多是 UNIX 系统，所以采用了 UNIX 的“/”风格。其实也比较好理解，它与 scheme 后面的“://”是一致的。
-
-5. **query**：附加一些额外的修饰参数。
-
-6. **fragment**：它是 URI 所定位的资源内部的一个“锚点”或者说是“标签”，浏览器可以在获取资源后直接跳转到它指示的位置。但片段标识符仅能由浏览器这样的客户端使用，服务器是看不到的。也就是说，浏览器永远不会把带“#fragment”的 URI 发送给服务器，服务器也永远不会用这种方式去处理资源的片段。
-
-### 🔶 2.3 绝对 URL 和相对 URL
-
-⚡️ **绝对 URL** ： 指向由其在 Web 上的绝对位置定义的位置。 包括协议+域名。
+> HTML `<figure>` 元素代表一段独立的内容, 经常与说明（caption） `<figcaption>` 配合使用, 并且作为一个独立的引用单元。当它属于主内容流（main flow）时，它的位置独立于主体。这个标签经常是在主文中引用的图片，插图，表格，代码段等等，当这部分转移到附录中或者其他页面时不会影响到主体。
 
 举个 🌰 子：
 
-1. 如果 index.html 页面在 projects 这一目录 。
+```
+<figure>
+  <img src="images/f1.jpg"
+     title="f1舒马赫"
+  />
+  <figcaption>围场中的车王舒马赫</figcaption>
+</figure>
+```
 
-2. projects 目录位于 web 服务站点的根目录。
+![结果](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html-2-1-figure.png)
 
-3. web 站点的域名为`http://www.example.com`。
+### 🔶 1.2 css 引入
 
-4. 那么这个页面就可以通过`http://www.example.com/projects/index.html`访问。
+也可以使用 CSS 把图片嵌入网站中，CSS 属性 background-image 和其他 background-\* 属性是用来放置背景图片的。
 
-   ( 或者通过`http://www.example.com/projects/`来访问, 因为在没有指定特定的 URL 的情况下，大多数 web 服务会默认访问加载 index.html 这类页面)
+举个 🌰 子，为页面中的所有段落设置一个背景图片，你可以这样做：
 
-`http://www.example.com/projects/index.html`即为绝对 URL。
+## <center>🔖 二、HTML 中的响应式图片</center>
 
-⚡️ **相对 URL**： 指向与您链接的文件相关的位置。
-
-举个 🌰 子：
-
-1. 如果我们访问了`http://www.example.com/projects/index.html`这个文件。
-
-2. 想转到和`index.html`相同目录下的一个 PDF 文件, 那个可以直接将该文件名作为 URL。例如 `project-brief.pdf`。
-
-3. 如果 PDF 文件在 projects 的子目录 pdfs 中。 那么相对路径就是 `pdfs/project-brief.pdf`。
-   (对应的绝对 URL 就是 http://www.example.com/projects/pdfs/project-brief.pdf.)
-
-`pdfs/project-brief.pdf`即为相对 URL。
-
-## <center>🔖 三、路径</center>
-
-⚡️ **URL 使用路径查找文件。**
-
-### 🔶 3.1 URL 中使用的路径
-
-![目录结构图](https://cdn.jsdelivr.net/gh/jolin27144/blog-images/html-pic/html1-4-path.png)
-
-此目录结构的根目录称为 resume。当在网站上工作时， 你会有一个包含整个网站的目录。
-
-在根目录，我们有一个 resume.html，作为主页
-
-我们的根目录还有两个目录—— dist 和 images，它们分别包含一个 index.html 文件和一个 img.png 文件。
-
-- ⚡️ **指向当前目录** ：如果 resume.html 想要包含 style.css。因为它与当前文件是在同一个目录的。可以用"./"表示当前目录，或者直接省略。
-
-  URL 为：`style.css`或`./style.css`
-
-- ⚡️ **指向子目录** ：如果 resume.html 想要包含 images 目录下的 img.png。
-
-  URL 为：`images/img.png`
-
-- ⚡️ **指向上级目录** ： 如果想在 dist/index.html 中包含一个指向 images/img.png 的超链接，你必须先返回上级目录，然后再回到 images 目录。返回上一个目录级使用两个英文点号表示 ".."。
-
-  URL 为: `../imgaes/img.png`
+## <center>🔖 三、HTML 中的矢量图形</center>
 
 ## <center>🔖 总结</center>
 
-- ✔️ 理解 HTML 超链接
-- ✔️ 理解 URI 和 URL、URN
-- ✔️ 理解 URL 中使用的路径
+- ✔️ 理解 HTML 引入图片的方式
+- ✔️ 理解 HTML 中的响应式图片
+- ✔️ 理解 HTML 中的矢量图形
 
 ## <center>🔖 参考资料</center>
 
-- Creating hyperlinks,
-  https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks
-- `<a>`: The Anchor element,
-  https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a
-- 什么是 URL？,
-  https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/What_is_a_URLa
-- 统一资源标志符(URI),
-  https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E6%A0%87%E5%BF%97%E7%AC%A6
-- 统一资源定位符(URL),
-  https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6
-- 统一资源标志符(URN),
-  https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%90%8D%E7%A7%B06
-- URL 中“#” “？” &“”号的作用,
-  https://www.cnblogs.com/kaituorensheng/p/3776527.html
-- RFC 3986,https://tools.ietf.org/html/rfc3986
+- HTML 中的图片,
+  https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML
+- `<figure>`：可附标题内容元素,
+  https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/figure
+- `<img>`：图像嵌入元素,
+  https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img
