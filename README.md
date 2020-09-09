@@ -32,6 +32,16 @@ https://mp.weixin.qq.com/s/qVaHVdLLYymTL9ObGZmTXQ
 
 ### 隐式转换
 
+### this
+
+### 原型链
+
+### 继承
+
+### call apply
+
+### 事件循环
+
 ## JavaScript Framework
 
 ### Vue
