@@ -40,6 +40,8 @@ https://mp.weixin.qq.com/s/qVaHVdLLYymTL9ObGZmTXQ
 
 ### call apply
 
+### 异步(Promise)
+
 ### 事件循环
 
 ## JavaScript Framework
