@@ -1,5 +1,3 @@
-const window = {};
-
 class Observer {
   constructor(obj) {
     this.obj = obj;
@@ -22,8 +20,8 @@ class Observer {
         if (newValue === val) {
           return;
         }
-        dep.notify();
         val = newValue;
+        dep.notify();
       }
     });
   }
@@ -55,31 +53,36 @@ class Dep {
 
 class Watcher {
   constructor(regOrFn) {
-    this.regOrFn = regOrFn;
-    this.bind();
+    this.vm = window;
+    // this.regOrFn = regOrFn;
+    this.getter = parsePath(regOrFn);
+    this.value = this.bind();
   }
 
   bind() {
+    debugger;
     window.target = this;
-    this.getter();
+    const val = this.getter(window);
     window.target = null;
+    return val;
   }
 
-  getter() {
-    // if (typeof window[this.regOrFn] === 'function') {
-    //   return window[this.regOrFn]();
-    // } else {
-    //   return window[this.regOrFn];
-    // }
+  // getter() {
+  // if (typeof window[this.regOrFn] === 'function') {
+  //   return window[this.regOrFn]();
+  // } else {
+  //   return window[this.regOrFn];
+  // }
 
-    // return eval(this.regOrFn)
-    return window.myObject.foo;
-  }
+  // return eval(this.regOrFn)
+  // return window.myObject.foo;
+  // }
 
   render() {
     debugger;
-    console.log(`此时最新的值是${this.getter()}`);
-    console.log('asdfasfsafadsfdsafasf')
+    console.log(`oldValue : ${this.value}`);
+    this.value = this.bind();
+    console.log(`newValue : ${this.value}`);
   }
 }
 
@@ -90,13 +93,27 @@ class Watcher {
 //     this[]
 // };
 
+function parsePath(path) {
+  const segments = path.split('.');
+
+  return function (obj) {
+    for (let i = 0; i < segments.length; i++) {
+      if (!obj) {
+        return;
+      }
+      obj = obj[segments[i]];
+    }
+    return obj;
+  };
+}
+
 window.myObject = new Observer({
   foo: 'this is original foo',
   bar: 'this is original bar'
 }).obj;
-window.myWatcher = new Watcher('window.myObject.foo');
+window.myWatcher = new Watcher('myObject.foo');
 
-// while (true) {
 console.log('running');
 debugger;
-// }
+
+window.myObject.foo = 'here comes new foo';
