@@ -2,11 +2,11 @@ import { LinkedList } from "../link-list/LinkedList";
 import { DoublyNode } from "./DoublyNode";
 
 export class DoublyLinkedList extends LinkedList {
-  protected previous: DoublyNode<any> | undefined;
+  protected tail: DoublyNode<any> | undefined;
 
   constructor() {
     super();
-    this.previous = undefined;
+    this.tail = undefined;
   }
 
   // 获取链表头部元素
@@ -14,39 +14,39 @@ export class DoublyLinkedList extends LinkedList {
     return this.head;
   }
 
+  getTail(): DoublyNode<any> | undefined {
+    return this.tail;
+  }
+
   push(val: any) {
     const doublyNode = new DoublyNode(val);
 
     if (this.isEmpty()) {
       this.head = doublyNode;
+      this.tail = doublyNode;
     } else {
-      let currentNode = this.getHead();
-      while (currentNode?.next) {
-        currentNode = currentNode.next;
-      }
+      let currentNode = this.getTail();
+      this.tail = doublyNode;
       currentNode!.next = doublyNode;
       doublyNode.pre = currentNode;
     }
-
     this.count++;
+
+    return this;
   }
 
-  // toString(reverse?: boolean): string {
-  //   if (reverse === undefined) {
-  //     return super.toString();
-  //   }
-  //
-  //   const arr = [];
-  //   let current = this.getHead();
-  //   while (current?.next) {
-  //     current = current.next;
-  //   }
-  //
-  //   while (current?.pre) {
-  //     arr.push(current.val);
-  //     current = current.pre;
-  //   }
-  //
-  //   return arr.join(",");
-  // }
+  toString(reverse?: boolean): string {
+    if (reverse === undefined) {
+      return super.toString();
+    }
+
+    const arr: any[] = [];
+    let current = this.getTail();
+    while (current) {
+      arr.push(current.val);
+      current = current.pre;
+    }
+
+    return arr.join(",");
+  }
 }
