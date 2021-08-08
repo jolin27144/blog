@@ -1,2 +1,3 @@
 node_modules
 src/data-structure/**/*.js
+*.js.map
