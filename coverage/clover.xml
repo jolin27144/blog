@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1628428214118" clover="3.2.0">
+  <project timestamp="1628428214118" name="All files">
+    <metrics statements="63" coveredstatements="24" conditionals="26" coveredconditionals="7" methods="11" coveredmethods="7" elements="100" coveredelements="38" complexity="0" loc="63" ncloc="63" packages="2" files="2" classes="2"/>
+    <package name="链表">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="model.ts" path="D:\Code\blog\src\data-structure\一维数据结构\链表\model.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="链表.link-list">
+      <metrics statements="60" coveredstatements="21" conditionals="26" coveredconditionals="7" methods="10" coveredmethods="6"/>
+      <file name="LinkedList.ts" path="D:\Code\blog\src\data-structure\一维数据结构\链表\link-list\LinkedList.ts">
+        <metrics statements="60" coveredstatements="21" conditionals="26" coveredconditionals="7" methods="10" coveredmethods="6"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="35" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="45" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="57" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="83" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="85" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="98" count="4" type="stmt"/>
+        <line num="100" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="103" count="3" type="stmt"/>
+        <line num="104" count="3" type="stmt"/>
+        <line num="105" count="3" type="stmt"/>
+        <line num="107" count="3" type="stmt"/>
+        <line num="110" count="4" type="stmt"/>
+        <line num="119" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="125" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="127" count="0" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="129" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="134" count="0" type="stmt"/>
+        <line num="135" count="0" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="140" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
+        <line num="143" count="0" type="stmt"/>
+        <line num="144" count="0" type="stmt"/>
+        <line num="146" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
