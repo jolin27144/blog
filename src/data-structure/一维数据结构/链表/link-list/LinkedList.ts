@@ -25,6 +25,11 @@ export class LinkedList {
     return this.count === 0;
   }
 
+  clear() {
+    this.head = undefined;
+    this.count = 0;
+  }
+
   /**
    * 取指定索引节点
    * @param index
@@ -51,7 +56,7 @@ export class LinkedList {
    * 任意位置移除元素
    * @param index
    */
-  removeNodeAt(index: number): Node<any> | undefined {
+  removeNodeAt(index: number): any {
     if (index < 0 || index >= this.getSize()) {
       return undefined;
     }
@@ -106,6 +111,7 @@ export class LinkedList {
     }
 
     this.count++;
+    return true;
   }
 
   /**
