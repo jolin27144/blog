@@ -111,7 +111,7 @@ export class DoublyLinkedList extends LinkedList {
     }
     this.count++;
 
-    return this;
+    return true;
   }
 
   inverseToString() {
