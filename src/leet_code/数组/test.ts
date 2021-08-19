@@ -1,14 +1,25 @@
 import { search } from "./01binary-search";
 import { removeElement } from "./02remove-element";
 import { sortedSquares } from "./03squares-of-a-sorted-array";
+import { minSubArrayLen } from "./04minSubArrayLen";
 
-test("01二分查找", () => {
-  const nums: number[] = [-1, 0, 3, 5, 9, 12];
-  const target: number = 9;
-  expect(search(nums, target)).toBe(4);
+describe("01binary-search", () => {
+  test("1", () => {
+    const nums: number[] = [-1, 0, 3, 5, 9, 12],
+      target: number = 9,
+      result: number = 4;
+    expect(search(nums, target)).toBe(result);
+  });
+
+  test("2", () => {
+    const nums: number[] = [-1, 0, 3, 5, 9, 12],
+      target: number = 2,
+      result: number = -1;
+    expect(search(nums, target)).toBe(result);
+  });
 });
 
-describe("02移除元素", () => {
+describe("02remove-element", () => {
   test("1", () => {
     let nums: number[] = [3, 2, 2, 3],
       val: number = 3;
@@ -37,5 +48,28 @@ describe("03squares-of-a-sorted-array", () => {
     const nums: number[] = [-7, -3, 2, 3, 11];
     const result: number[] = [4, 9, 9, 49, 121];
     expect(sortedSquares(nums)).toEqual(result);
+  });
+});
+
+describe("04minSubArrayLen", () => {
+  test("1", () => {
+    const target = 7,
+      nums = [2, 3, 1, 2, 4, 3],
+      result = 2;
+    expect(minSubArrayLen(target, nums)).toBe(result);
+  });
+
+  test("2", () => {
+    const target = 4,
+      nums = [1, 4, 4],
+      result = 1;
+    expect(minSubArrayLen(target, nums)).toBe(result);
+  });
+
+  test("3", () => {
+    const target = 11,
+      nums = [1, 1, 1, 1, 1, 1, 1, 1],
+      result = 0;
+    expect(minSubArrayLen(target, nums)).toBe(result);
   });
 });
