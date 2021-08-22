@@ -49,7 +49,11 @@ class MyLinkedList {
 
   addAtHead(val: number): void {
     const myLinkNode: LinkedNode = new LinkedNode(val);
-    const head = this.head;
+    // const head = this.head;
+    
+    const dummyHead = new LinkedNode(0)
+    dummyHead.next = this.head
+    
     // 空链表
     if (!head) {
       this.head = myLinkNode;
