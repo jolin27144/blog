@@ -14,7 +14,7 @@
  */
 function buildMinHeap(arr) {
   // 向下取整
-  for (let i = parseInt(arr.length / 2); i >= 0; i--) {
+  for (let i = Math.floor(arr.length / 2); i >= 0; i--) {
     sink(arr, i);
   }
 }
@@ -23,7 +23,6 @@ function buildMinHeap(arr) {
  * @description 下沉(这里是构建小根堆，大的父节点下沉)
  * @param {number[]} arr 堆
  * @param {number} parentIndex 需要判断是否需要下沉的节点索引
- * @returns arr
  */
 function sink(arr, parentIndex) {
   // 先将最小节点的索引指向父节点
@@ -68,7 +67,7 @@ function sink(arr, parentIndex) {
  */
 function swim(arr, index) {
   // 父节点索引
-  const parentIndex = parseInt((index - 1) / 2);
+  const parentIndex = Math.floor((index - 1) / 2);
   // 是否有父节点
   const hasParent = () => arr[parentIndex] !== undefined;
   // 如果有父节点,并且大于自己
@@ -115,7 +114,7 @@ function heapSort(heap) {
     // 先交换堆顶元素，和最后一个元素。
     [minHeap[0], minHeap[minHeap.length - 1]] = [
       minHeap[minHeap.length - 1],
-      minHeap[0]
+      minHeap[0],
     ];
     // 此时删除的是堆顶元素
     sort.push(minHeap.pop());
