@@ -1,7 +1,7 @@
 // 节点类
-class MyLinkedNode {
+class LinkedNode {
   val: number;
-  next: MyLinkedNode | null;
+  next: LinkedNode | null;
 
   constructor(val: number) {
     this.val = val;
@@ -13,7 +13,7 @@ class MyLinkedNode {
 class MyLinkedList {
   // 链表长度
   private size: number;
-  private head: MyLinkedNode | null;
+  private head: LinkedNode | null;
 
   constructor() {
     this.head = null;
@@ -25,38 +25,30 @@ class MyLinkedList {
   }
 
   // 此方法，方便插入、删除节点
-  getNodeAtIndex(index: number): MyLinkedNode | null {
+  getNodeAtIndex(index: number): LinkedNode | null {
     if (!this.validateIndex(index)) {
       return null;
     }
 
-    let current = this.head;
     let i = 0;
+    let current = this.head as LinkedNode;
     while (i !== index) {
-      current = current!.next;
+      current = current.next as LinkedNode;
       i++;
     }
     return current;
   }
 
   get(index: number): number {
-    // 0开始。无效索引返回-1
-    if (!this.validateIndex(index)) {
-      return -1;
+    const node = this.getNodeAtIndex(index);
+    if (node instanceof LinkedNode) {
+      return node.val;
     }
-    // 有效索引，返回值
-    let i = 0;
-    let current = this.head;
-    while (i !== index && current) {
-      i++;
-      current = current.next;
-    }
-
-    return current!.val;
+    return -1;
   }
 
   addAtHead(val: number): void {
-    const myLinkNode: MyLinkedNode = new MyLinkedNode(val);
+    const myLinkNode: LinkedNode = new LinkedNode(val);
     const head = this.head;
     // 空链表
     if (!head) {
@@ -70,7 +62,7 @@ class MyLinkedList {
   }
 
   addAtTail(val: number): void {
-    const myLinkNode: MyLinkedNode = new MyLinkedNode(val);
+    const myLinkNode: LinkedNode = new LinkedNode(val);
     const head = this.head;
 
     // 空链表
@@ -79,10 +71,10 @@ class MyLinkedList {
     } else {
       // 非空
       let current = head;
-      while (current!.next) {
-        current = current!.next;
+      while (current.next) {
+        current = current.next;
       }
-      current!.next = myLinkNode;
+      current.next = myLinkNode;
     }
 
     this.size++;
@@ -101,10 +93,10 @@ class MyLinkedList {
       return;
     }
 
-    const myLinkNode: MyLinkedNode = new MyLinkedNode(val);
-    // index 一定是有效的, 因此一定能返回节点
-    const pre = this.getNodeAtIndex(index - 1);
-    myLinkNode.next = pre!.next;
+    const myLinkNode: LinkedNode = new LinkedNode(val);
+    // index 是有效的, 因此一定能返回节点
+    const pre = this.getNodeAtIndex(index - 1) as LinkedNode;
+    myLinkNode.next = pre.next;
     pre!.next = myLinkNode;
     this.size++;
   }

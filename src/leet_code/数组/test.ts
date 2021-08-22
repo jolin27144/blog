@@ -1,7 +1,7 @@
 import { search } from "./01binary-search";
 import { removeElement } from "./02remove-element";
 import { sortedSquares } from "./03squares-of-a-sorted-array";
-import { minSubArrayLen } from "./04minSubArrayLen";
+import { minSubArrayLen } from "./04min-sub-array-Len";
 
 describe("01binary-search", () => {
   test("1", () => {

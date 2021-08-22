@@ -1,4 +1,4 @@
-import { removeElements } from "./01removeElements";
+import { removeElements } from "./01remove-elements";
 
 describe("01removeElements", () => {
   test("1", () => {
