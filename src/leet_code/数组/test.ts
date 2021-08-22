@@ -2,6 +2,7 @@ import { search } from "./01binary-search";
 import { removeElement } from "./02remove-element";
 import { sortedSquares } from "./03squares-of-a-sorted-array";
 import { minSubArrayLen } from "./04min-sub-array-Len";
+import { generateMatrix } from "./05generate-matrix";
 
 describe("01binary-search", () => {
   test("1", () => {
@@ -71,5 +72,23 @@ describe("04minSubArrayLen", () => {
       nums = [1, 1, 1, 1, 1, 1, 1, 1],
       result = 0;
     expect(minSubArrayLen(target, nums)).toBe(result);
+  });
+});
+
+describe("05generateMatrix", () => {
+  test("1", () => {
+    const n = 3;
+    const target = [
+      [1, 2, 3],
+      [8, 9, 4],
+      [7, 6, 5],
+    ];
+    expect(generateMatrix(n)).toEqual(target);
+  });
+
+  test("2", () => {
+    const n = 1;
+    const target = [[1]];
+    expect(generateMatrix(n)).toEqual(target);
   });
 });
