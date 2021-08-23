@@ -1,4 +1,5 @@
 // 节点类
+// @ts-ignore
 class LinkedNode {
   val: number;
   next: LinkedNode | null;
@@ -47,12 +48,14 @@ class MyLinkedList {
     return -1;
   }
 
+  // FIXME
   addAtHead(val: number): void {
     const myLinkNode: LinkedNode = new LinkedNode(val);
-    // const head = this.head;
+    const head = this.head;
     
-    const dummyHead = new LinkedNode(0)
-    dummyHead.next = this.head
+    // TODO
+    // const dummyHead = new LinkedNode(0)
+    // dummyHead.next = this.head
     
     // 空链表
     if (!head) {
