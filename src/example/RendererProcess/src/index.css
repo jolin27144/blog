@@ -1,0 +1,27 @@
+div {
+  font-size: 2em;
+  background: whitesmoke;
+}
+
+.a {
+  position: relative;
+  height: 500px;
+  z-index: 10;
+  background: aquamarine;
+}
+
+.b {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: bisque;
+  z-index: 11;
+}
+
+.c{
+  position: fixed;
+  top: 0;
+  background: blueviolet;
+}
