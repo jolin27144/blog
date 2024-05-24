@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.addEventListener(
+        "error",
+        function (e) {
+          debugger;
+          const typeName = e.target.localName;
+          let sourceUrl = "";
+          if (typeName === "link") {
+            sourceUrl = e.target.href;
+          } else if (typeName === "script") {
+            sourceUrl = e.target.src;
+          }
+          console.log(e, sourceUrl);
+        },
+        true
+      );
+    </script>
+    <link rel="stylesheet" href="../css.1" />
+  </head>
+
+  <body>
+    <img src="lock.svg" />
+
+    <input type="text" placeholder="测试输入" />
+
+    <script src="./index.js"></script>
+    <script src="./index1.js"></script>
+    <script src="./index2.js"></script>
+    <script>
+      console.log(a.a);
+    </script>
+  </body>
+</html>
