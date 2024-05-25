@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server-Sent Events</title>
+    <style>
+        #messages {
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1>Server-Sent Events 示例</h1>
+<div id="messages"></div>
+
+<script>
+  if (typeof(EventSource) !== "undefined") {
+    let r = 0
+    const eventSource = new EventSource('http://localhost:3000/events');
+    const messagesDiv = document.getElementById('messages');
+
+    eventSource.onmessage = function(event) {
+      const newElement = document.createElement("div");
+      newElement.textContent = `消息ID: ${event.lastEventId}, 数据: ${event.data}`;
+      messagesDiv.appendChild(newElement);
+    };
+
+    eventSource.onerror = function(event) {
+      const newElement = document.createElement("div");
+      newElement.textContent = "连接出错了，正在重试...";
+      messagesDiv.appendChild(newElement);
+    };
+    
+    eventSource.addEventListener('end', function(event) {
+      const newElement = document.createElement("div");
+      newElement.textContent = "数据已全部接收完毕";
+      messagesDiv.appendChild(newElement);
+      eventSource.close(); // 关闭连接
+    });
+  } else {
+    document.getElementById('messages').textContent = "你的浏览器不支持Server-Sent Events.";
+  }
+</script>
+</body>
+</html>
