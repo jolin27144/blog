@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Web Vitals Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <p>
+      <img
+        style="max-width: 360px"
+        src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wyT2?ver=7fed"
+        alt="Kitten"
+      />
+    </p>
+    <p>Text below image</p>
+    <p
+      style="height: 800px; width: 800px; background-color: rebeccapurple"
+      elementtiming="important-paragraph"
+    >
+      ssadfasdfdsaf
+    </p>
+
+    <script type="module">
+      import { onCLS, onINP, onLCP } from "https://unpkg.com/web-vitals?module";
+
+      onCLS(console.log);
+      onINP(console.log);
+      onLCP(console.log);
+    </script>
+
+    <script>
+      // Catch errors since some browsers throw when using the new `type` option.
+      // https://bugs.webkit.org/show_bug.cgi?id=209216
+      try {
+        // Create the performance observer.
+        const po = new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries()) {
+            // Log the entry and all associated details.
+            console.log(entry.toJSON());
+          }
+        });
+        // Start listening for `element` entries to be dispatched.
+        po.observe({type: 'element', buffered: true});
+        po.observe({type: 'longtask', buffered: true});
+        po.observe({type: 'resource', buffered: true});
+      } catch (e) {
+        // Do nothing if the browser doesn't support this API.
+      }
+    </script>
+  </body>
+</html>
