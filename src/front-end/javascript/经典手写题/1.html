@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Load Images</title>
+    <style>
+        .lazy {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .lazy-loaded {
+            opacity: 1;
+        }
+        .placeholder {
+            width: 100%;
+            height: 1200px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+<h1>Lazy Load Images Example</h1>
+<div class="image-container">
+    <img data-src="image1.jpg" class="lazy placeholder" alt="Image 1">
+    <img data-src="image2.jpg" class="lazy placeholder" alt="Image 2">
+    <img data-src="image3.jpg" class="lazy placeholder" alt="Image 3">
+    <!-- 更多图片 -->
+</div>
+<script >
+  document.addEventListener("DOMContentLoaded", function() {
+    const lazyContainer = document.querySelector('.image-container');
+
+    if ('IntersectionObserver' in window) {
+      let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            let lazyImage = entry.target;
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.classList.remove('placeholder');
+            lazyImage.classList.add('lazy-loaded');
+            lazyImageObserver.unobserve(lazyImage);
+          }
+        });
+      });
+
+      lazyImageObserver.observe(lazyContainer);
+    }
+  });
+    
+</script>
+</body>
+</html>

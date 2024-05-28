@@ -51,7 +51,8 @@ Core Web Vitals 仅包含 LCP 等三个指标，是 Web Vitals 的核心子集�
 - 构建策略。摇树，分割代码，按需加载，压缩
 - 图片压缩。图片类型选择。
 - cdn 分发。
-- 缓存策略。能缓存的，尽量缓存。service worker
+- 缓存策略。能缓存的，尽量缓存。
+- service worker
 
 ### 渲染
 
